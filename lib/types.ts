@@ -47,6 +47,17 @@ export interface Certification {
   issueDate: string
   expiryDate?: string
   verifyUrl?: string
+  skills?: string[]
+}
+
+export interface AchievementEntry {
+  id: string
+  title: string
+  category: string
+  organization: string
+  year: string
+  description: string
+  highlight?: string
 }
 
 export interface ResearchEntry {

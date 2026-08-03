@@ -7,6 +7,7 @@ import { AIEngineering } from "@/components/sections/ai-engineering";
 import { Android } from "@/components/sections/android";
 import { Research } from "@/components/sections/research";
 import { Blog } from "@/components/sections/blog";
+import { Certifications } from "@/components/sections/certifications";
 
 export default function Home() {
   return (
@@ -20,9 +21,11 @@ export default function Home() {
       <Android />
       <Research />
       <Blog />
+      <Certifications />
     </>
   );
 }
+
 
 
 
