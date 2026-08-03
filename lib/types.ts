@@ -16,6 +16,7 @@ export interface ExperienceEntry {
   role: string
   startDate: string
   endDate: string | "Present"
+  location?: string
   achievements: string[]
   techStack: string[]
   logo?: string
