@@ -6,6 +6,7 @@ import { Projects } from "@/components/sections/projects";
 import { AIEngineering } from "@/components/sections/ai-engineering";
 import { Android } from "@/components/sections/android";
 import { Research } from "@/components/sections/research";
+import { Blog } from "@/components/sections/blog";
 
 export default function Home() {
   return (
@@ -18,9 +19,11 @@ export default function Home() {
       <AIEngineering />
       <Android />
       <Research />
+      <Blog />
     </>
   );
 }
+
 
 
 
