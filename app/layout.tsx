@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,8 +18,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vicky Raut — Portfolio",
-  description: "AI Engineer & Android Developer Portfolio",
+  title: "Vicky Raut — AI Engineer & Android Developer",
+  description: "Building intelligent multi-agent systems, RAG architectures, and native Android applications.",
 };
 
 export default function RootLayout({
@@ -36,6 +37,7 @@ export default function RootLayout({
         <main id="main-content" className="flex-1 pt-20">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );
