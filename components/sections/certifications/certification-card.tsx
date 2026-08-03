@@ -39,7 +39,8 @@ export const CertificationCard: React.FC<CertificationCardProps> = ({
         {/* Date Badge */}
         <div className="mb-4">
           <span className="font-mono text-meta text-muted-foreground bg-background-secondary px-2.5 py-1 rounded-sm border border-border inline-block">
-            ISSUED // {certification.issueDate}
+            Issued: {certification.issueDate}
+            {certification.expiryDate ? ` · Expires: ${certification.expiryDate}` : ""}
           </span>
         </div>
 

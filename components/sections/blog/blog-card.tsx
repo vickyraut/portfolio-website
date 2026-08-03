@@ -14,10 +14,17 @@ export interface BlogCardProps {
 }
 
 export const BlogCard: React.FC<BlogCardProps> = ({ post, className }) => {
-  return (
+  const articleUrl = post.url && post.url.trim() !== "" ? post.url : (post.slug ? `/blog/${post.slug}` : undefined);
+  const hasUrl = Boolean(articleUrl && articleUrl.trim() !== "");
+
+  const cardContent = (
     <Card
-      interactive
-      className={cn("w-full h-full p-5 flex flex-col justify-between group", className)}
+      interactive={hasUrl}
+      className={cn(
+        "w-full h-full p-5 flex flex-col justify-between group transition-all duration-220 ease-out",
+        hasUrl ? "cursor-pointer" : "cursor-default opacity-85",
+        className
+      )}
     >
       <div>
         {/* Cover Image Container with Grayscale to Color Transition */}
@@ -48,7 +55,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ post, className }) => {
         </div>
 
         {/* Article Title */}
-        <h3 className="text-h4 font-bold text-foreground tracking-tight line-clamp-2 mb-2">
+        <h3 className="text-h4 font-bold text-foreground tracking-tight line-clamp-2 mb-2 group-hover:underline">
           {post.title}
         </h3>
 
@@ -68,10 +75,28 @@ export const BlogCard: React.FC<BlogCardProps> = ({ post, className }) => {
       {/* Read Article Action Row */}
       <div className="flex items-center justify-between pt-4 border-t border-border mt-auto">
         <span className="text-body-sm font-medium text-foreground group-hover:underline">
-          Read Article
+          {hasUrl ? "Read Article" : "Coming Soon"}
         </span>
-        <ArrowUpRight className="size-4 text-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        {hasUrl && (
+          <ArrowUpRight className="size-4 text-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        )}
       </div>
     </Card>
   );
+
+  if (hasUrl) {
+    return (
+      <a
+        href={articleUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Read article: ${post.title}`}
+        className="block h-full rounded-lg focus:outline-hidden focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
+      >
+        {cardContent}
+      </a>
+    );
+  }
+
+  return cardContent;
 };

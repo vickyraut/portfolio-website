@@ -15,7 +15,7 @@ export const blogs: BlogPostData[] = [
     tags: ["Agentic AI", "LangChain", "Python"],
     publishedAt: "AUG 2026",
     readingTime: "6 MIN READ",
-    url: "#",
+    url: "/blog/deterministic-tool-calling-agents",
   },
   {
     slug: "jetpack-compose-performance-optimization",
@@ -26,7 +26,7 @@ export const blogs: BlogPostData[] = [
     tags: ["Kotlin", "Jetpack Compose", "Performance"],
     publishedAt: "JUL 2026",
     readingTime: "8 MIN READ",
-    url: "#",
+    url: "/blog/jetpack-compose-performance-optimization",
   },
   {
     slug: "hybrid-search-bm25-dense-vector-reranking",
@@ -37,6 +37,6 @@ export const blogs: BlogPostData[] = [
     tags: ["RAG", "Vector Search", "Python"],
     publishedAt: "JUN 2026",
     readingTime: "10 MIN READ",
-    url: "#",
+    url: "/blog/hybrid-search-bm25-dense-vector-reranking",
   },
 ];
