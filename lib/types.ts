@@ -1,0 +1,68 @@
+export interface ProjectData {
+  slug: string
+  title: string
+  featured: boolean
+  image: string
+  problem: string
+  solution: string
+  impact: string
+  techStack: string[]
+  githubUrl?: string
+  liveUrl?: string
+}
+
+export interface ExperienceEntry {
+  company: string
+  role: string
+  startDate: string
+  endDate: string | "Present"
+  achievements: string[]
+  techStack: string[]
+  logo?: string
+}
+
+export type SkillCategoryName =
+  | "Programming"
+  | "AI"
+  | "LLMs"
+  | "Backend"
+  | "Databases"
+  | "Android"
+  | "Cloud"
+  | "DevOps"
+  | "Tools"
+
+export interface SkillCategory {
+  category: SkillCategoryName
+  items: string[]
+}
+
+export interface Certification {
+  name: string
+  issuer: string
+  issuerLogo?: string
+  issueDate: string
+  expiryDate?: string
+  verifyUrl?: string
+}
+
+export interface ResearchEntry {
+  title: string
+  venue: string
+  year: number
+  abstract: string
+  methodology: string
+  results: string
+  paperUrl?: string
+  codeUrl?: string
+}
+
+export interface BlogPostFrontmatter {
+  title: string
+  slug: string
+  coverImage: string
+  category: string
+  tags: string[]
+  publishedAt: string
+  readingTime: string
+}
