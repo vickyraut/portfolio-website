@@ -20,27 +20,27 @@ export const Footer: React.FC = () => {
   const githubLink = socialLinks.find((l) => l.label === "GitHub")?.href || "https://github.com/vickyraut";
 
   return (
-    <footer className="w-full bg-foreground text-background py-16 md:py-20 border-t border-neutral-800 relative" aria-label="Site Footer">
+    <footer className="w-full bg-background text-foreground py-16 md:py-20 border-t border-border relative" aria-label="Site Footer">
       <Container width="standard">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 pb-12 border-b border-neutral-800">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 pb-12 border-b border-border">
           {/* Column 1: Brand & Tagline (5 cols) */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-2.5">
-              <NodeMark className="size-5 text-background" />
-              <span className="font-mono text-h4 font-bold tracking-tight text-background">
+              <NodeMark className="size-5 text-foreground" />
+              <span className="font-mono text-h4 font-bold tracking-tight text-foreground">
                 {siteMetadata.name.toUpperCase()}
               </span>
             </div>
 
-            <p className="text-body-sm text-neutral-400 max-w-sm leading-relaxed">
+            <p className="text-body-sm text-muted-foreground max-w-sm leading-relaxed">
               AI Engineer & Android Developer crafting autonomous agent systems, hybrid RAG pipelines, and high-performance native mobile applications.
             </p>
           </div>
 
           {/* Column 2: Navigation Links (4 cols) */}
           <div className="md:col-span-4 space-y-3">
-            <span className="text-overline font-mono text-neutral-400 uppercase tracking-[0.12em] block mb-2">
+            <span className="text-overline font-mono text-muted-foreground uppercase tracking-[0.12em] block mb-2">
               NAVIGATION
             </span>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-body-sm">
@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="text-neutral-300 hover:text-background hover:underline transition-colors py-0.5 inline-block"
+                    className="text-muted-foreground hover:text-foreground hover:underline transition-colors py-0.5 inline-block"
                   >
                     {item.label}
                   </a>
@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 3: Social & Credentials (3 cols) */}
           <div className="md:col-span-3 space-y-3">
-            <span className="text-overline font-mono text-neutral-400 uppercase tracking-[0.12em] block mb-2">
+            <span className="text-overline font-mono text-muted-foreground uppercase tracking-[0.12em] block mb-2">
               CONNECT
             </span>
             <div className="flex flex-col space-y-2.5 text-body-sm">
@@ -67,7 +67,7 @@ export const Footer: React.FC = () => {
                 href={githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-neutral-300 hover:text-background transition-colors"
+                className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
               >
                 <GithubIcon className="size-4" />
                 <span>GitHub</span>
@@ -77,7 +77,7 @@ export const Footer: React.FC = () => {
                 href={linkedinLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-neutral-300 hover:text-background transition-colors"
+                className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
               >
                 <LinkedinIcon className="size-4" />
                 <span>LinkedIn</span>
@@ -85,7 +85,7 @@ export const Footer: React.FC = () => {
 
               <a
                 href={emailLink}
-                className="inline-flex items-center gap-2 text-neutral-300 hover:text-background transition-colors"
+                className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Mail className="size-4" />
                 <span>Email</span>
@@ -95,7 +95,7 @@ export const Footer: React.FC = () => {
                 href="/resume/vicky-raut-resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-neutral-300 hover:text-background transition-colors pt-1"
+                className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors pt-1"
               >
                 <FileText className="size-4" />
                 <span>Official Resume</span>
@@ -105,7 +105,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Copyright & Credit Bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-meta font-mono text-neutral-400">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-meta font-mono text-muted-foreground">
           <div>
             © {currentYear} {siteMetadata.name}. All rights reserved.
           </div>
@@ -118,7 +118,7 @@ export const Footer: React.FC = () => {
           <button
             onClick={handleScrollToTop}
             aria-label="Back to top"
-            className="p-2 rounded-full border border-neutral-700 hover:border-background text-neutral-300 hover:text-background transition-colors shrink-0"
+            className="p-2 rounded-full border border-border hover:border-foreground text-muted-foreground hover:text-foreground transition-colors shrink-0 bg-background cursor-pointer"
           >
             <ArrowUp className="size-4" />
           </button>

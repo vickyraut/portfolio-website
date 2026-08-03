@@ -23,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.url),
   title: {
-    default: "Vicky Raut — AI Engineer & Android Developer",
+    default: "Vicky Raut | AI Engineer & Android Developer",
     template: "%s | Vicky Raut",
   },
   description:
