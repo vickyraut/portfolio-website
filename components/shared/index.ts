@@ -3,3 +3,4 @@ export * from "./section-divider";
 export * from "./tech-tag";
 export * from "./reveal";
 export * from "./node-mark";
+export * from "./github-icon";
