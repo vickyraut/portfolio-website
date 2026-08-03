@@ -4,7 +4,7 @@ import React from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ResearchEntry } from "@/lib/types";
-import { ArrowUpRight, FileText } from "lucide-react";
+import { ArrowUpRight, FileText, Award } from "lucide-react";
 import { GithubIcon } from "@/components/shared/github-icon";
 import { cn } from "@/lib/utils";
 
@@ -68,12 +68,13 @@ export const ResearchCard: React.FC<ResearchCardProps> = ({ entry, className }) 
       </div>
 
       {/* Bottom Action Links */}
-      <div className="flex items-center gap-3 pt-4 border-t border-border">
+      <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-border">
         {entry.paperUrl && (
           <Button
             variant="primary"
             size="sm"
             onClick={() => window.open(entry.paperUrl, "_blank")}
+            aria-label={`Read research paper: ${entry.title}`}
             className="group/btn"
           >
             <FileText className="size-4 mr-1.5" />
@@ -87,9 +88,22 @@ export const ResearchCard: React.FC<ResearchCardProps> = ({ entry, className }) 
             variant="secondary"
             size="sm"
             onClick={() => window.open(entry.codeUrl, "_blank")}
+            aria-label={`View source code repository for ${entry.title}`}
           >
             <GithubIcon className="size-4 mr-1.5" />
             <span>Source Code</span>
+          </Button>
+        )}
+
+        {entry.certificateUrl && (
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() => window.open(entry.certificateUrl, "_blank")}
+            aria-label={`View publication certificate for ${entry.title}`}
+          >
+            <Award className="size-4 mr-1.5" />
+            <span>Certificate</span>
           </Button>
         )}
       </div>

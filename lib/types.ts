@@ -69,6 +69,7 @@ export interface ResearchEntry {
   results: string
   paperUrl?: string
   codeUrl?: string
+  certificateUrl?: string
 }
 
 export interface BlogPostFrontmatter {

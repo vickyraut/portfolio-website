@@ -10,6 +10,7 @@ export const research: ResearchEntry[] = [
     results: "Achieved a 68% reduction in task execution step failures and a 2.3x speedup in end-to-end task completion latency compared to standard ReAct agent baselines.",
     paperUrl: "https://arxiv.org/abs/2501.00000",
     codeUrl: "https://github.com/vickyraut/agentmesh-orchestrator",
+    certificateUrl: "/resume/vicky-raut-resume.pdf",
   },
   {
     title: "Hybrid Sparse-Dense Retrieval Fusion for Multi-Turn Technical Question Answering",
@@ -20,5 +21,6 @@ export const research: ResearchEntry[] = [
     results: "Increased retrieval Precision@5 from 64.2% to 91.4% and Mean Reciprocal Rank (MRR) by 28.5% over pure vector search baselines.",
     paperUrl: "https://arxiv.org/abs/2408.00000",
     codeUrl: "https://github.com/vickyraut/semantic-rag-engine",
+    certificateUrl: "/resume/vicky-raut-resume.pdf",
   },
 ];
