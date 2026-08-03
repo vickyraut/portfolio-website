@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Vicky Raut — AI Engineer & Android Developer",
+    title: "Vicky Raut | AI Engineer & Android Developer",
     description:
       "Building intelligent multi-agent systems, hybrid RAG architectures, and reactive native Android applications.",
     url: siteMetadata.url,
@@ -63,20 +63,20 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Vicky Raut — AI Engineer & Android Developer Portfolio",
+        alt: "Vicky Raut — AI Engineer & Android Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vicky Raut — AI Engineer & Android Developer",
+    title: "Vicky Raut | AI Engineer & Android Developer",
     description:
       "Building intelligent multi-agent systems, hybrid RAG architectures, and reactive native Android applications.",
     creator: "@vickyraut",
-    images: ["/og-image.png"],
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
