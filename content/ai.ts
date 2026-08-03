@@ -57,8 +57,8 @@ export const aiCapabilities: AICapability[] = [
 ];
 
 export const processSteps = [
-  { step: "01", label: "PROMPT", description: "Structured Intent Framing" },
-  { step: "02", label: "REASONING & TOOL CALL", description: "Dynamic Plan & Function Execution" },
-  { step: "03", label: "RETRIEVAL", description: "Contextual Vector Synthesis" },
-  { step: "04", label: "RESPONSE", description: "Verified Output Generation" },
+  { step: "01", label: "User Intent & Prompt", description: "Structured Intent Framing" },
+  { step: "02", label: "Reasoning & Tool Execution", description: "Dynamic Plan & Function Execution" },
+  { step: "03", label: "Context Retrieval", description: "Contextual Vector Synthesis" },
+  { step: "04", label: "Verified Output", description: "Verified Output Generation" },
 ] as const;

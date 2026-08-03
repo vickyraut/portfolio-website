@@ -15,12 +15,17 @@ export const ProcessStrip: React.FC = () => {
       viewport={{ once: true, amount: 0.2 }}
       className="w-full mt-12 pt-8 border-t border-border"
     >
-      <div className="mb-6 flex items-center justify-between">
-        <span className="text-overline font-mono text-muted-foreground uppercase tracking-[0.12em]">
-          EXECUTION FLOW // AGENTIC PIPELINE ARCHITECTURE
+      {/* Header Row: Primary Title & Subtitle */}
+      <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <h3 className="text-h4 font-bold text-foreground tracking-tight">
+          Agentic AI Pipeline
+        </h3>
+        <span className="text-meta font-mono text-muted-foreground">
+          Multi-Agent Execution Workflow
         </span>
       </div>
 
+      {/* 4-Step Process Flow Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative">
         {processSteps.map((step, index) => (
           <motion.div
@@ -38,7 +43,7 @@ export const ProcessStrip: React.FC = () => {
                 )}
               </div>
 
-              <h4 className="text-overline font-mono font-semibold text-foreground uppercase tracking-[0.08em] mb-1">
+              <h4 className="text-body-sm font-semibold text-foreground tracking-tight mb-1">
                 {step.label}
               </h4>
               <p className="text-meta text-muted-foreground">
