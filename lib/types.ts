@@ -26,12 +26,14 @@ export type SkillCategoryName =
   | "Programming"
   | "AI"
   | "LLMs"
+  | "AI & LLMs"
   | "Backend"
   | "Databases"
   | "Android"
   | "Cloud"
   | "DevOps"
   | "Tools"
+  | (string & {})
 
 export interface SkillCategory {
   category: SkillCategoryName

@@ -1,3 +1,52 @@
-import type { ProjectData } from "@/lib/types"
+import type { ProjectData } from "@/lib/types";
 
-export const projects: ProjectData[] = []
+export const projects: ProjectData[] = [
+  {
+    slug: "agentmesh-orchestrator",
+    title: "AgentMesh Orchestrator",
+    featured: true,
+    image: "/images/projects/agentmesh.png",
+    problem: "Multi-agent LLM workflows suffer from non-deterministic tool calling failures, unvalidated schema output, and high step latency.",
+    solution: "Designed a stateful graph-based orchestration engine featuring strict Zod/Pydantic schema verification, parallel tool execution, and automated fallback recovery.",
+    impact: "Reduced agent execution step failures by 68% and dropped average multi-tool latency from 4.2s to 1.8s.",
+    techStack: ["Python", "TypeScript", "LangChain", "FastAPI", "Pinecone", "Next.js", "Docker"],
+    githubUrl: "https://github.com/vickyraut/agentmesh-orchestrator",
+    liveUrl: "https://agentmesh.demo.com",
+  },
+  {
+    slug: "kronosync-android",
+    title: "KronoSync Mobile",
+    featured: false,
+    image: "/images/projects/kronosync.png",
+    problem: "Offline-first mobile applications frequently suffer from high battery consumption and data sync collisions under unstable network conditions.",
+    solution: "Built a native Kotlin Android application with Jetpack Compose, Room DB encrypted local storage, and intelligent WorkManager exponential backoff synchronization.",
+    impact: "Achieved 100% offline functionality, 0 data loss under network drops, and reduced background battery overhead by 35%.",
+    techStack: ["Kotlin", "Jetpack Compose", "Coroutines & Flow", "Room DB", "Hilt", "Retrofit"],
+    githubUrl: "https://github.com/vickyraut/kronosync-android",
+    liveUrl: "https://play.google.com/store/apps",
+  },
+  {
+    slug: "semantic-rag-engine",
+    title: "SemanticRAG Pipeline",
+    featured: false,
+    image: "/images/projects/semantic-rag.png",
+    problem: "Standard vector retrieval struggles with low precision on multi-turn technical documentation queries containing specialized terminology.",
+    solution: "Engineered a hybrid sparse-dense retrieval pipeline incorporating BM25 keyword matching, Cohere reranking, and Reciprocal Rank Fusion (RRF).",
+    impact: "Boosted retrieval precision P@5 from 64% to 91% across 100,000+ technical documentation chunks.",
+    techStack: ["Python", "LlamaIndex", "ChromaDB", "FastAPI", "OpenAI API", "PyTest"],
+    githubUrl: "https://github.com/vickyraut/semantic-rag-engine",
+    liveUrl: "https://rag.vickyraut.com",
+  },
+  {
+    slug: "edgecam-ai-android",
+    title: "EdgeCam AI Vision",
+    featured: false,
+    image: "/images/projects/edgecam.png",
+    problem: "Cloud-dependent computer vision mobile apps suffer latency lag and raise user privacy concerns during live camera analysis.",
+    solution: "Integrated quantized TensorFlow Lite and ONNX models on-device using Android CameraX and GPU delegate acceleration.",
+    impact: "Delivered 60 FPS real-time camera object detection entirely offline with zero cloud server reliance.",
+    techStack: ["Kotlin", "TensorFlow Lite", "CameraX", "ONNX", "Android NDK", "OpenCV"],
+    githubUrl: "https://github.com/vickyraut/edgecam-ai-android",
+    liveUrl: "https://play.google.com/store/apps",
+  },
+];
