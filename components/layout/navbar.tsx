@@ -7,6 +7,7 @@ import { navItems } from "@/lib/constants";
 import { Container } from "./container";
 import { Button } from "@/components/ui/button";
 import { NodeMark } from "@/components/shared/node-mark";
+import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { MobileMenu } from "./mobile-menu";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -72,7 +73,9 @@ export const Navbar: React.FC = () => {
             </nav>
 
             {/* Right Side Actions */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
+              <ThemeToggle />
+
               <Button
                 variant="secondary"
                 size="sm"

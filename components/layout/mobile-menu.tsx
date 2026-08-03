@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { navItems } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { NodeMark } from "@/components/shared/node-mark";
+import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { X } from "lucide-react";
 
 export interface MobileMenuProps {
@@ -60,13 +61,16 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               <span>VR</span>
               <NodeMark size={14} />
             </a>
-            <button
-              onClick={onClose}
-              aria-label="Close Mobile Menu"
-              className="p-2 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground rounded-md cursor-pointer"
-            >
-              <X className="size-6" />
-            </button>
+            <div className="flex items-center gap-3">
+              <ThemeToggle />
+              <button
+                onClick={onClose}
+                aria-label="Close Mobile Menu"
+                className="p-2 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground rounded-md cursor-pointer"
+              >
+                <X className="size-6" />
+              </button>
+            </div>
           </div>
 
           {/* Navigation Links */}
