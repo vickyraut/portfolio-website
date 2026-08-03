@@ -5,6 +5,7 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Reveal } from "@/components/shared/reveal";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { ContactForm } from "./contact-form";
 import { socialLinks } from "@/lib/constants";
 import { fadeUp } from "@/lib/animations";
@@ -46,10 +47,10 @@ export const Contact: React.FC = () => {
         {/* Left Column: Direct Info & Social Links */}
         <Reveal variants={fadeUp} className="lg:col-span-5 space-y-8">
           {/* Availability Status Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm border border-border bg-background-secondary font-mono text-meta text-foreground">
+          <Badge variant="outline" interactive={false} className="gap-2 px-3 py-1.5 rounded-sm bg-background-secondary font-mono text-meta text-foreground">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
             <span>Available for Q3/Q4 AI & Android contracts</span>
-          </div>
+          </Badge>
 
           <div className="space-y-4">
             <h3 className="text-h2 font-bold text-foreground tracking-tight">

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { AchievementEntry } from "@/lib/types";
 import { Trophy } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -44,9 +45,9 @@ export const AchievementCard: React.FC<AchievementCardProps> = ({
         {/* Highlight Badge */}
         {achievement.highlight && (
           <div className="mb-3">
-            <span className="inline-block bg-foreground text-background font-mono text-[10px] font-semibold px-2.5 py-0.5 rounded-sm uppercase tracking-wider">
+            <Badge variant="invert" interactive={false}>
               {achievement.highlight}
-            </span>
+            </Badge>
           </div>
         )}
 

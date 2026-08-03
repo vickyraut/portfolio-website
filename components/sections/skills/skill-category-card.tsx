@@ -29,7 +29,7 @@ export const SkillCategoryCard: React.FC<SkillCategoryCardProps> = ({
         {/* Technology Pill Chips with Hover Inversion */}
         <div className="flex flex-wrap gap-2">
           {category.items.map((item) => (
-            <Badge key={item} variant="pill" interactive={true}>
+            <Badge key={item} variant="skill">
               {item}
             </Badge>
           ))}

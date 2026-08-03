@@ -5,9 +5,9 @@ export interface TechTagProps extends Omit<BadgeProps, "variant"> {
   label: string
 }
 
-export const TechTag: React.FC<TechTagProps> = ({ label, interactive = true, ...props }) => {
+export const TechTag: React.FC<TechTagProps> = ({ label, ...props }) => {
   return (
-    <Badge variant="pill" interactive={interactive} {...props}>
+    <Badge variant="technology" {...props}>
       {label}
     </Badge>
   )

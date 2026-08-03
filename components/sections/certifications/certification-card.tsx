@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { TechTag } from "@/components/shared/tech-tag";
 import { Button } from "@/components/ui/button";
 import { Certification } from "@/lib/types";
@@ -38,10 +39,14 @@ export const CertificationCard: React.FC<CertificationCardProps> = ({
 
         {/* Date Badge */}
         <div className="mb-4">
-          <span className="font-mono text-meta text-muted-foreground bg-background-secondary px-2.5 py-1 rounded-sm border border-border inline-block">
+          <Badge
+            variant="outline"
+            interactive={false}
+            className="font-mono text-meta text-muted-foreground bg-background-secondary px-2.5 py-1 rounded-sm border-border"
+          >
             Issued: {certification.issueDate}
             {certification.expiryDate ? ` · Expires: ${certification.expiryDate}` : ""}
-          </span>
+          </Badge>
         </div>
 
         {/* Skills Chips */}

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { TechTag } from "@/components/shared/tech-tag";
 import { ExperienceEntry } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -36,9 +37,13 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
         </div>
 
         <div className="flex items-center gap-2 shrink-0 sm:self-start">
-          <span className="font-mono text-meta text-muted-foreground bg-background-secondary px-3 py-1 rounded-sm border border-border">
+          <Badge
+            variant="outline"
+            interactive={false}
+            className="font-mono text-meta text-muted-foreground bg-background-secondary px-3 py-1 rounded-sm border-border"
+          >
             {entry.startDate} — {entry.endDate}
-          </span>
+          </Badge>
         </div>
       </div>
 
