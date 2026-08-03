@@ -8,6 +8,7 @@ import { Android } from "@/components/sections/android";
 import { Research } from "@/components/sections/research";
 import { Blog } from "@/components/sections/blog";
 import { Certifications } from "@/components/sections/certifications";
+import { Contact } from "@/components/sections/contact";
 
 export default function Home() {
   return (
@@ -22,9 +23,11 @@ export default function Home() {
       <Research />
       <Blog />
       <Certifications />
+      <Contact />
     </>
   );
 }
+
 
 
 
