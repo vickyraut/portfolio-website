@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Vicky Raut — AI Engineer & Android Developer";
+export const alt = "Vicky Raut | AI Engineer & Android Developer";
 export const size = {
   width: 1200,
   height: 630,
