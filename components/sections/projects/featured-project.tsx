@@ -29,7 +29,7 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({ project, class
           </span>
         </div>
         <span className="font-mono text-meta text-muted-foreground hidden sm:inline-block">
-          {"// SPOTLIGHT_CASE_STUDY"}
+          Case Study Overview
         </span>
       </div>
 
@@ -37,7 +37,7 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({ project, class
       <div className="relative w-full aspect-[21/9] min-h-[220px] rounded-lg border border-border bg-background-secondary overflow-hidden mb-8 flex items-center justify-center">
         <div className="w-full h-full bg-gradient-to-br from-background via-background-secondary to-background p-8 flex flex-col items-center justify-center text-center group-hover:scale-[1.02] transition-transform duration-300 ease-out">
           <span className="font-mono text-overline text-muted-foreground uppercase tracking-[0.12em] mb-2">
-            PRIMARY SYSTEM ARCHITECTURE
+            Architecture Overview
           </span>
           <h3 className="text-h2 font-bold text-foreground tracking-tight max-w-[640px]">
             {project.title}

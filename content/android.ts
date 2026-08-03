@@ -3,6 +3,7 @@ export interface AndroidCapability {
   title: string;
   subtitle: string;
   description: string;
+  category: string;
   icon: string;
 }
 
@@ -20,6 +21,7 @@ export const androidCapabilities: AndroidCapability[] = [
     title: "MVVM Architecture",
     subtitle: "State Management & Unidirectional Flow",
     description: "Separating UI state from business logic using StateFlow, SharedFlow, and ViewModel lifecycle handlers for deterministic UI rendering.",
+    category: "Architecture",
     icon: "Layers",
   },
   {
@@ -27,6 +29,7 @@ export const androidCapabilities: AndroidCapability[] = [
     title: "Clean Architecture",
     subtitle: "Decoupled Domain & Data Layers",
     description: "Enforcing clear boundaries between UI, domain use-cases, and repository data sources for high testability and maintainability.",
+    category: "Architecture",
     icon: "Box",
   },
   {
@@ -34,6 +37,7 @@ export const androidCapabilities: AndroidCapability[] = [
     title: "Jetpack Compose",
     subtitle: "Declarative UI Framework",
     description: "Building responsive, hardware-accelerated native UIs with declarative composables, custom state hoisting, and smooth animations.",
+    category: "UI Framework",
     icon: "Smartphone",
   },
   {
@@ -41,6 +45,7 @@ export const androidCapabilities: AndroidCapability[] = [
     title: "Room Database",
     subtitle: "Offline-First Encrypted Storage",
     description: "Architecting local SQLite relational schemas with Room ORM, Flow reactive queries, and automatic schema migrations.",
+    category: "Database",
     icon: "Database",
   },
   {
@@ -48,6 +53,7 @@ export const androidCapabilities: AndroidCapability[] = [
     title: "Retrofit & OkHttp",
     subtitle: "Type-Safe REST & HTTP Client",
     description: "Handling asynchronous REST APIs with type-safe interfaces, custom interceptors, auth token refresh, and JSON serialization.",
+    category: "Networking",
     icon: "Wifi",
   },
   {
@@ -55,6 +61,7 @@ export const androidCapabilities: AndroidCapability[] = [
     title: "Firebase Integration",
     subtitle: "Realtime & Push Infrastructure",
     description: "Integrating Firebase FCM push notifications, Analytics, Crashlytics, and Remote Config for real-time app telemetry.",
+    category: "Cloud Services",
     icon: "Flame",
   },
 ];

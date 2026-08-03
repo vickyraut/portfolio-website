@@ -46,7 +46,7 @@ export const TechnologyCard: React.FC<TechnologyCardProps> = ({
             <IconComponent className="size-4 stroke-[1.5]" />
           </div>
           <span className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider">
-            ANDROID_TECH
+            {capability.category || "Architecture"}
           </span>
         </div>
 

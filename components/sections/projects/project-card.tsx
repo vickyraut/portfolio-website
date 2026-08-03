@@ -15,6 +15,15 @@ export interface ProjectCardProps {
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project, className }) => {
+  const category =
+    project.techStack.includes("Kotlin") || project.techStack.includes("Android")
+      ? "Android App"
+      : project.techStack.includes("LangChain") ||
+        project.techStack.includes("Python") ||
+        project.techStack.includes("FastAPI")
+      ? "AI Project"
+      : "Featured Project";
+
   return (
     <Card
       interactive
@@ -25,7 +34,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, className }) 
         <div className="relative w-full aspect-video rounded-md border border-border bg-background-secondary overflow-hidden mb-6 flex items-center justify-center">
           <div className="w-full h-full bg-gradient-to-br from-background-secondary via-background to-background-secondary flex flex-col items-center justify-center p-6 text-center group-hover:scale-[1.03] transition-transform duration-300 ease-out">
             <span className="font-mono text-overline text-muted-foreground uppercase tracking-[0.12em] mb-1">
-              PROJ_SPEC // {project.slug}
+              {category}
             </span>
             <span className="text-h4 font-semibold text-foreground tracking-tight">
               {project.title}
