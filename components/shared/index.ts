@@ -5,3 +5,4 @@ export * from "./reveal";
 export * from "./node-mark";
 export * from "./github-icon";
 export * from "./linkedin-icon";
+export * from "./json-ld";
