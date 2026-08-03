@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { Navbar } from "@/components/layout/navbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,10 +29,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", inter.variable, jetbrainsMono.variable)}
+      className={cn("h-full", "scroll-smooth", "antialiased", inter.variable, jetbrainsMono.variable)}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">{children}</body>
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
+        <Navbar />
+        <main id="main-content" className="flex-1 pt-20">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
+
 
