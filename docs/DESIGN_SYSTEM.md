@@ -77,3 +77,13 @@ Vertical padding across sections enforces a predictable architectural rhythm:
 - **Contrast Ratios:** Text `#000000` on `#FFFFFF` (21:1) and `#6B7280` on `#FFFFFF` (4.6:1) pass AA standards.
 - **Focus Rings:** All buttons, inputs, and links feature high-visibility outline rings (`focus-visible:ring-2 focus-visible:ring-foreground`).
 - **Screen Reader Support:** Decorative graphics are marked `aria-hidden="true"`. Form inputs use `aria-invalid` and `aria-describedby` error announcements.
+
+---
+
+## 🤖 6. AI Orchestration Graph System (`HeroVisual`)
+
+- **Data Model Topology:** Data-driven graph structure (`GRAPH_NODES`, `GRAPH_EDGES`, `DATA_PACKETS`) representing a 7-agent multi-agent runtime.
+- **Organic Node Motion:** Floating particle animations with unique drift paths (±4px), staggered durations (8.5s–12s), and non-synchronized loop timing.
+- **Dynamic Signal Transmission:** Lightweight 2.5px glowing data packets traversing active communication channels.
+- **Central Supervisor Halo:** Concentric breathing halo ring on central orchestrator node (`scale: [1, 1.25, 1]`, `opacity: [0.5, 0.15, 0.5]`).
+- **Live Runtime Console:** Monospace status messages cycling every 2.5s via Framer Motion `AnimatePresence` crossfades (`LANGGRAPH :: DISPATCH`, `HYBRID RAG :: MEMORY_UPDATED`, `STATE_FSM :: GRAPH_COMPILED`, etc.).
