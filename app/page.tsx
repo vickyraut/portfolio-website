@@ -5,6 +5,7 @@ import { Skills } from "@/components/sections/skills";
 import { Projects } from "@/components/sections/projects";
 import { AIEngineering } from "@/components/sections/ai-engineering";
 import { Android } from "@/components/sections/android";
+import { Research } from "@/components/sections/research";
 
 export default function Home() {
   return (
@@ -16,9 +17,11 @@ export default function Home() {
       <Projects />
       <AIEngineering />
       <Android />
+      <Research />
     </>
   );
 }
+
 
 
 
