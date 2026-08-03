@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Loader2, Check, Send, AlertCircle } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 interface FormState {
   name: string;

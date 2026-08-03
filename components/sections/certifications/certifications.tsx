@@ -32,10 +32,10 @@ export const Certifications: React.FC = () => {
         <Reveal variants={fadeUp}>
           <div className="flex items-center justify-between mb-6 pb-2 border-b border-border">
             <h3 className="text-h4 font-mono font-semibold uppercase tracking-[0.1em] text-foreground">
-              01 // TECHNICAL CERTIFICATIONS
+              {"01 // TECHNICAL CERTIFICATIONS"}
             </h3>
             <span className="font-mono text-meta text-muted-foreground hidden sm:inline-block">
-              // VERIFIED_CREDENTIALS
+              {"// VERIFIED_CREDENTIALS"}
             </span>
           </div>
         </Reveal>
@@ -60,10 +60,10 @@ export const Certifications: React.FC = () => {
         <Reveal variants={fadeUp}>
           <div className="flex items-center justify-between mb-6 pb-2 border-b border-border">
             <h3 className="text-h4 font-mono font-semibold uppercase tracking-[0.1em] text-foreground">
-              02 // KEY ACHIEVEMENTS & HONORS
+              {"02 // KEY ACHIEVEMENTS & HONORS"}
             </h3>
             <span className="font-mono text-meta text-muted-foreground hidden sm:inline-block">
-              // LEADERSHIP_&_AWARDS
+              {"// LEADERSHIP_&_AWARDS"}
             </span>
           </div>
         </Reveal>

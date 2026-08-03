@@ -1,7 +1,6 @@
-import type { RefObject } from "react"
+import { RefObject } from "react";
+import { useInView as useFramerInView } from "framer-motion";
 
-// TODO: Wrap Framer Motion useInView with once: true default
-
-export function useInView(_ref: RefObject<Element | null>): boolean {
-  return false
+export function useInView(ref: RefObject<Element | null>): boolean {
+  return useFramerInView(ref, { once: true });
 }

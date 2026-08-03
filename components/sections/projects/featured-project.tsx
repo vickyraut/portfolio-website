@@ -29,7 +29,7 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({ project, class
           </span>
         </div>
         <span className="font-mono text-meta text-muted-foreground hidden sm:inline-block">
-          // SPOTLIGHT_CASE_STUDY
+          {"// SPOTLIGHT_CASE_STUDY"}
         </span>
       </div>
 

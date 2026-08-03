@@ -15,14 +15,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const projectRoutes: MetadataRoute.Sitemap = projects.map((p) => ({
-    url: `${baseUrl}/#projects`,
+    url: `${baseUrl}/#project-${p.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 0.8,
   }));
 
   const blogRoutes: MetadataRoute.Sitemap = blogs.map((b) => ({
-    url: `${baseUrl}/#blog`,
+    url: `${baseUrl}/#blog-${b.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 0.7,

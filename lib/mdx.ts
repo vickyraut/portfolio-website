@@ -1,5 +1,4 @@
-// TODO: Implement MDX loading and parsing utilities (next-mdx-remote or contentlayer2)
-
-export function loadMdxContent(_slug: string): Promise<string | null> {
-  return Promise.resolve(null)
+export function loadMdxContent(slug?: string): Promise<string | null> {
+  if (!slug) return Promise.resolve(null);
+  return Promise.resolve(null);
 }

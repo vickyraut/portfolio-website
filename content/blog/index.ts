@@ -1,10 +1,11 @@
-import type { BlogPostFrontmatter } from "@/lib/types"
+import type { BlogPostFrontmatter } from "@/lib/types";
+import { blogs } from "@/data/blogs";
 
-// TODO: Implement MDX loader — parse frontmatter from content/blog/*.mdx at build time
 export function getAllBlogPosts(): BlogPostFrontmatter[] {
-  return []
+  return blogs;
 }
 
-export function getBlogPostBySlug(_slug: string): BlogPostFrontmatter | null {
-  return null
+export function getBlogPostBySlug(slug?: string): BlogPostFrontmatter | null {
+  if (!slug) return null;
+  return blogs.find((b) => b.slug === slug) || null;
 }

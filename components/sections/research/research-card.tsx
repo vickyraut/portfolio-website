@@ -25,7 +25,7 @@ export const ResearchCard: React.FC<ResearchCardProps> = ({ entry, className }) 
           {entry.venue} · {entry.year}
         </span>
         <span className="font-mono text-meta text-muted-foreground hidden sm:inline-block">
-          // PEER_REVIEWED
+          {"// PEER_REVIEWED"}
         </span>
       </div>
 
