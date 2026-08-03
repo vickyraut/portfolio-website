@@ -5,12 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Loader2, Check, Send, AlertCircle } from "lucide-react";
+import { contactFormSchema, type ContactFormData } from "@/lib/validations/contact";
 
-interface FormState {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
+interface FormState extends ContactFormData {
+  honeypot: string;
 }
 
 interface FormErrors {
@@ -28,34 +26,28 @@ export const ContactForm: React.FC = () => {
     email: "",
     subject: "",
     message: "",
+    honeypot: "",
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<StatusState>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
+  const [successMessage, setSuccessMessage] = useState<string>("");
 
   const validate = (): boolean => {
-    const newErrors: FormErrors = {};
-
-    if (!formData.name.trim() || formData.name.trim().length < 2) {
-      newErrors.name = "Please enter your name (at least 2 characters).";
+    const result = contactFormSchema.safeParse(formData);
+    if (!result.success) {
+      const fieldErrors = result.error.flatten().fieldErrors;
+      setErrors({
+        name: fieldErrors.name?.[0],
+        email: fieldErrors.email?.[0],
+        subject: fieldErrors.subject?.[0],
+        message: fieldErrors.message?.[0],
+      });
+      return false;
     }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!formData.email.trim() || !emailRegex.test(formData.email.trim())) {
-      newErrors.email = "Please enter a valid email address.";
-    }
-
-    if (!formData.subject.trim()) {
-      newErrors.subject = "Please enter a subject for your message.";
-    }
-
-    if (!formData.message.trim() || formData.message.trim().length < 10) {
-      newErrors.message = "Please enter a message (at least 10 characters).";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    setErrors({});
+    return true;
   };
 
   const handleChange = (
@@ -79,14 +71,41 @@ export const ContactForm: React.FC = () => {
     setErrorMessage("");
 
     try {
-      // Simulate network request / API submission
-      await new Promise((resolve) => setTimeout(resolve, 1200));
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        setStatus("error");
+        if (data.fieldErrors) {
+          setErrors({
+            name: data.fieldErrors.name?.[0],
+            email: data.fieldErrors.email?.[0],
+            subject: data.fieldErrors.subject?.[0],
+            message: data.fieldErrors.message?.[0],
+          });
+        }
+        setErrorMessage(
+          data.error || "Failed to send email message. Please try again."
+        );
+        return;
+      }
+
       setStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setSuccessMessage(data.message || "Message sent successfully!");
+      setFormData({ name: "", email: "", subject: "", message: "", honeypot: "" });
       setErrors({});
     } catch {
       setStatus("error");
-      setErrorMessage("Something went wrong while sending your message. Please try again or reach out directly via email.");
+      setErrorMessage(
+        "Network connection error. Please try again or email contact@vickyraut.com directly."
+      );
     }
   };
 
@@ -94,6 +113,7 @@ export const ContactForm: React.FC = () => {
     setStatus("idle");
     setErrors({});
     setErrorMessage("");
+    setSuccessMessage("");
   };
 
   if (status === "success") {
@@ -108,7 +128,8 @@ export const ContactForm: React.FC = () => {
             Message Sent Successfully
           </h3>
           <p className="text-body text-muted-foreground leading-relaxed">
-            Thank you for reaching out. I have received your message and will get back to you within 24–48 hours.
+            {successMessage ||
+              "Thank you for reaching out. I have received your message and will reply within 24–48 hours."}
           </p>
         </div>
 
@@ -121,6 +142,18 @@ export const ContactForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-5">
+      {/* Honeypot Anti-Spam Hidden Field */}
+      <input
+        type="text"
+        name="honeypot"
+        value={formData.honeypot}
+        onChange={handleChange}
+        tabIndex={-1}
+        aria-hidden="true"
+        autoComplete="off"
+        className="hidden"
+      />
+
       {status === "error" && errorMessage && (
         <div
           role="alert"
