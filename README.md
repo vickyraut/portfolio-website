@@ -45,21 +45,12 @@ A state-of-the-art, high-performance personal portfolio website built with Next.
 
 ## 📚 Documentation Suite
 
-This repository is built as a complete reference project. Explore the detailed technical guides below:
-
 | Guide | Description |
 | :--- | :--- |
-| [📁 **docs/PROJECT.md**](file:///x:/portfolio-website/docs/PROJECT.md) | Mission, problem statement, core persona, and strategic engineering goals. |
-| [📁 **docs/ARCHITECTURE.md**](file:///x:/portfolio-website/docs/ARCHITECTURE.md) | Component hierarchy, data flow, static rendering strategy, and state management. |
-| [📁 **docs/DESIGN_SYSTEM.md**](file:///x:/portfolio-website/docs/DESIGN_SYSTEM.md) | Typography scales, 4px spatial rhythm, color tokens, micro-interactions, and accessibility. |
-| [📁 **docs/DEVELOPMENT.md**](file:///x:/portfolio-website/docs/DEVELOPMENT.md) | Local environment setup, Git branching guidelines, commit standards, and component creation. |
+| [📁 **README.md**](file:///x:/portfolio-website/README.md) | Project overview, key highlights, quick start guide, and tech stack inventory. |
+| [📁 **DESIGN.md**](file:///x:/portfolio-website/DESIGN.md) | Complete monochrome design system specification, typography scales, spatial rhythm, and component primitives. |
+| [📁 **docs/ARCHITECTURE.md**](file:///x:/portfolio-website/docs/ARCHITECTURE.md) | System architecture, component hierarchy, static rendering strategy, and customization workflow. |
 | [📁 **docs/DEPLOYMENT.md**](file:///x:/portfolio-website/docs/DEPLOYMENT.md) | Production build pipeline, Vercel setup, environment variables, and Lighthouse audit checklist. |
-| [📁 **docs/CUSTOMIZATION.md**](file:///x:/portfolio-website/docs/CUSTOMIZATION.md) | Step-by-step instructions to adapt this portfolio codebase for your own career profile. |
-| [📁 **docs/ROADMAP.md**](file:///x:/portfolio-website/docs/ROADMAP.md) | Feature milestones, system evolution plans, and future release targets. |
-| [📁 **docs/FAQ.md**](file:///x:/portfolio-website/docs/FAQ.md) | Comprehensive 30-question technical FAQ covering architectural & design decisions. |
-| [📁 **docs/ASSETS.md**](file:///x:/portfolio-website/docs/ASSETS.md) | Asset specifications, SVG vector icons, dynamic PNG favicons, and OpenGraph images. |
-| [📁 **CONTRIBUTING.md**](file:///x:/portfolio-website/CONTRIBUTING.md) | Open-source contribution ground rules, pull request workflow, and code quality standards. |
-| [📁 **CHANGELOG.md**](file:///x:/portfolio-website/CHANGELOG.md) | Semantic versioning change history and release notes. |
 
 ---
 

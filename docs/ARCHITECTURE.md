@@ -9,7 +9,7 @@ This document provides a technical breakdown of the Next.js 16 App Router setup,
 ```
 portfolio-website/
 ├── app/                        # Next.js App Router root
-│   ├── favicon.ico
+│   ├── favicon.ico             # Static fallback favicon
 │   ├── globals.css             # Tailwind CSS v4 directives & theme inline mapping
 │   ├── icon.tsx                # Dynamic PNG favicon generator (ImageResponse)
 │   ├── layout.tsx              # Root HTML layout, font variables, Navbar, Footer, JsonLd
@@ -61,6 +61,10 @@ portfolio-website/
 │   ├── constants.ts            # Site metadata, nav items, social links
 │   ├── types.ts                # TypeScript interfaces & types
 │   └── utils.ts                # Tailwind merge (cn utility)
+├── public/                     # Static media & downloadable assets
+│   ├── og-image.png            # 1200x630 OpenGraph preview card
+│   ├── images/                 # Project screenshots & blog thumbnails (16:9)
+│   └── resume/                 # Official downloadable PDF resume
 └── styles/                     # CSS design tokens
     └── tokens.css              # Custom CSS variables & raw color scales
 ```
@@ -150,3 +154,23 @@ export const staggerContainer = (staggerChildren = 0.08): Variants => ({
   },
 });
 ```
+
+---
+
+## 🛠️ 5. Customization & Extension Workflow
+
+### Decoupled Content Layer
+All bio, project, experience, skill, research, and certification data is 100% decoupled from layout markup. Content lives strictly in typed contracts under `content/` and `lib/constants.ts`:
+
+- **Site Metadata & Socials:** `lib/constants.ts`
+- **Work Experience:** `content/experience.ts`
+- **Projects:** `content/projects.ts`
+- **Skills & Tooling:** `content/skills.ts`
+- **Research & Papers:** `content/research.ts`
+- **Certifications:** `content/certifications.ts`
+
+### Adding a New Homepage Section
+1. Define the content type contract in `lib/types.ts`.
+2. Populate the data entries in `content/<section-name>.ts`.
+3. Create the modular component in `components/sections/<section-name>/<section-name>.tsx` reusing `<SectionWrapper>`, `<Container>`, `<SectionHeading>`, and `<Reveal>`.
+4. Export through `components/sections/<section-name>/index.ts` and compose into `app/page.tsx`.
