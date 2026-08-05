@@ -4,6 +4,17 @@ export interface Milestone {
   description: string;
 }
 
+export interface OrbitTechnology {
+  id: string;
+  name: string;
+  category: string;
+  targetSection: string;
+  ringIndex: number; // 0: Inner, 1: Middle, 2: Outer
+  initialAngle: number; // in degrees
+  duration: number; // orbit period in seconds
+  direction: "clockwise" | "counter-clockwise";
+}
+
 export const aboutData = {
   overline: "ABOUT ME",
   heading: "Engineering systems at the intersection of AI & Android.",
@@ -33,4 +44,37 @@ export const aboutData = {
       description: "Graduated with honors, focusing on algorithm design, systems programming, and machine learning fundamentals.",
     },
   ] as Milestone[],
+  orbitTechnologies: [
+    {
+      id: "ai-llm",
+      name: "AI / LLM",
+      category: "Agentic AI & Foundation Models",
+      targetSection: "#ai-engineering",
+      ringIndex: 0,
+      initialAngle: 0,
+      duration: 22,
+      direction: "clockwise",
+    },
+    {
+      id: "android",
+      name: "Android",
+      category: "Native Mobile OS & Kotlin",
+      targetSection: "#android",
+      ringIndex: 1,
+      initialAngle: 120,
+      duration: 30,
+      direction: "counter-clockwise",
+    },
+    {
+      id: "github",
+      name: "GitHub",
+      category: "Software Systems & Engineering",
+      targetSection: "#skills",
+      ringIndex: 2,
+      initialAngle: 240,
+      duration: 38,
+      direction: "clockwise",
+    },
+  ] as OrbitTechnology[],
 };
+

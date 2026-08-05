@@ -5,6 +5,7 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { Reveal } from "@/components/shared/reveal";
 import { AboutTimeline } from "./about-timeline";
+import { ProfileOrbit } from "./profile-orbit";
 import { aboutData } from "@/content/about";
 import { fadeUp } from "@/lib/animations";
 
@@ -26,11 +27,13 @@ export const About: React.FC = () => {
 
       {/* Two Column Layout (40% / 60% split on desktop) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        {/* Left Column: Personal Statement (40% width / 5 cols) */}
-        <Reveal variants={fadeUp} className="lg:col-span-5">
+        {/* Left Column: Personal Statement + Integrated Profile Orbit (40% width / 5 cols) */}
+        <Reveal variants={fadeUp} className="lg:col-span-5 flex flex-col gap-6">
           <h3 className="text-h3 font-semibold text-foreground tracking-tight leading-snug">
             {aboutData.statement}
           </h3>
+          {/* Integrated Interactive Profile Orbital Visual Widget */}
+          <ProfileOrbit />
         </Reveal>
 
         {/* Right Column: Bio Summary + Timeline + Philosophy (60% width / 7 cols) */}
@@ -52,3 +55,5 @@ export const About: React.FC = () => {
     </SectionWrapper>
   );
 };
+
+
