@@ -225,7 +225,7 @@ export const ProfileOrbit: React.FC = () => {
               alt="Vicky Raut Professional Portrait"
               fill
               sizes="(max-width: 640px) 88px, 104px"
-              className="object-cover filter grayscale contrast-110 brightness-105 transition-all duration-500 group-hover:scale-110"
+              className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
               priority
             />
           </div>
