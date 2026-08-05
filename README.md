@@ -126,9 +126,28 @@ Distributed under the MIT License. See `LICENSE` for details.
 
 ---
 
-## 📬 Contact & Connect
+## Author
 
-- **Website:** [https://vickyraut.com](https://vickyraut.com)
-- **GitHub:** [@vickyraut](https://github.com/vickyraut)
-- **LinkedIn:** [in/vickyraut](https://linkedin.com/in/vickyraut)
-- **Email:** `contact@vickyraut.com`
+<p align="center">
+  <strong>Vicky V. Raut</strong><br>
+  <em>AI & Software Engineer (CodeMonk)</em>
+</p>
+
+<p align="center">
+  <a href="https://vickyraut.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"></a>
+  <a href="https://github.com/vickyraut"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+  <a href="https://www.linkedin.com/in/vickyraut/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="mailto:vraut12cr@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+</p>
+
+<br>
+
+---
+
+<p align="center">
+  <em>If you found this project helpful, consider giving it a ⭐ on GitHub. Your support is appreciated!</em>
+</p>
+
+<p align="center">
+  Made with ❤️ by <strong>Vicky V. Raut (CodeMonk)</strong>
+</p>
