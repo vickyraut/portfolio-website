@@ -14,24 +14,8 @@ A state-of-the-art, high-performance personal portfolio website built with Next.
 
 ## 📸 Overview & Visual Showcase
 
-```
-+-----------------------------------------------------------------------------------+
-|  [NAVBAR]  VR. // SYSTEM_ACTIVE                 [ABOUT]  [EXP]  [SKILLS] [CONTACT]|
-+-----------------------------------------------------------------------------------+
-|                                                                                   |
-|   VICKY RAUT                                                                      |
-|   AI ENGINEER & ANDROID DEVELOPER                                                 |
-|                                                                                   |
-|   Architecting autonomous multi-agent tool workflows, hybrid vector-sparse RAG   |
-|   retrieval engines, and reactive offline-first Kotlin mobile applications.       |
-|                                                                                   |
-|   [EXPLORE WORK ->]   [CONTACT DIRECT]                   [7-NODE NEURAL GRAPH]   |
-|                                                                                   |
-+-----------------------------------------------------------------------------------+
-|  [HERO] ----> [ABOUT] ----> [EXPERIENCE] ----> [SKILLS] ----> [PROJECTS]          |
-|  [AI SYS] --> [ANDROID] --> [RESEARCH]   ----> [BLOG]   ----> [CONTACT]          |
-+-----------------------------------------------------------------------------------+
-```
+![Portfolio Overview & Visual Showcase](assets/overview.png)
+
 
 ### Key Highlights
 
