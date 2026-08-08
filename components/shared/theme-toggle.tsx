@@ -1,35 +1,22 @@
 "use client";
 
-import React, { useSyncExternalStore } from "react";
+import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const emptySubscribe = () => () => {};
-
 export const ThemeToggle: React.FC = () => {
-  const mounted = useSyncExternalStore(
-    emptySubscribe,
-    () => true,
-    () => false
-  );
-
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme, resolvedTheme } = useTheme();
 
-  if (!mounted) {
-    return (
-      <Button
-        variant="outline"
-        size="sm"
-        aria-label="Toggle theme"
-        className="w-9 h-9 p-0 flex items-center justify-center border-border"
-      >
-        <span className="size-4" />
-      </Button>
-    );
-  }
+  useEffect(() => {
+    const handle = requestAnimationFrame(() => {
+      setMounted(true);
+    });
+    return () => cancelAnimationFrame(handle);
+  }, []);
 
-  const isDark = resolvedTheme === "dark" || theme === "dark";
+  const isDark = mounted && (resolvedTheme === "dark" || theme === "dark");
 
   return (
     <Button
@@ -37,12 +24,16 @@ export const ThemeToggle: React.FC = () => {
       size="sm"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label="Toggle theme"
-      className="w-9 h-9 p-0 flex items-center justify-center border-border hover:border-foreground transition-colors"
+      className="w-9 h-9 p-0 flex items-center justify-center shrink-0 border-border hover:border-foreground transition-colors"
     >
-      {isDark ? (
-        <Sun className="size-4 text-foreground transition-transform duration-200" />
+      {mounted ? (
+        isDark ? (
+          <Sun className="size-4 text-foreground transition-transform duration-200 shrink-0" />
+        ) : (
+          <Moon className="size-4 text-foreground transition-transform duration-200 shrink-0" />
+        )
       ) : (
-        <Moon className="size-4 text-foreground transition-transform duration-200" />
+        <span className="size-4 block" />
       )}
     </Button>
   );

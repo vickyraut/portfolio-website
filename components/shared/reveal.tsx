@@ -16,7 +16,7 @@ export const Reveal: React.FC<RevealProps> = ({
   variants = fadeUp,
   delay = 0,
   once = true,
-  amount = 0.2,
+  amount = 0.05,
   className,
   children,
   ...props

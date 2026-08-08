@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { aboutData, OrbitTechnology } from "@/content/about";
@@ -146,11 +146,22 @@ export const ProfileOrbit: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [activeTechId, setActiveTechId] = useState<string | null>(null);
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
+  const [canTilt, setCanTilt] = useState(false);
   const shouldReduceMotion = useReducedMotion();
 
-  // Mouse parallax tracking
+  // Evaluate fine pointer / 3D tilt capability post-hydration to ensure 100% SSR match
+  useEffect(() => {
+    const handle = requestAnimationFrame(() => {
+      if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        setCanTilt(true);
+      }
+    });
+    return () => cancelAnimationFrame(handle);
+  }, []);
+
+  // Mouse parallax tracking (only enabled for fine pointer / desktop mouse interactions)
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current || shouldReduceMotion) return;
+    if (!containerRef.current || shouldReduceMotion || !canTilt) return;
     const rect = containerRef.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
@@ -173,7 +184,8 @@ export const ProfileOrbit: React.FC = () => {
   };
 
   // Concentric radii calibrated for left-column integration
-  // Desktop: Ring 0: 72px, Ring 1: 122px, Ring 2: 172px (Fits within 400px x 400px container)
+  // Ring 0: 72px, Ring 1: 122px, Ring 2: 172px (Fits within 400px container)
+  // Scaled responsively via CSS (scale-75 sm:scale-100) for narrow mobile viewports
   const ringRadii = [72, 122, 172];
 
   return (
@@ -181,18 +193,22 @@ export const ProfileOrbit: React.FC = () => {
       variants={fadeUp}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-30px" }}
+      viewport={{ once: true, amount: 0.05 }}
       className="w-full mt-4 flex flex-col items-center justify-center relative select-none"
     >
       {/* Integrated Orbit Container */}
       <div
         ref={containerRef}
-        onMouseEnter={() => setIsHovered(true)}
+        onMouseEnter={() => {
+          if (canTilt) setIsHovered(true);
+        }}
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
-        className="relative w-full max-w-[390px] aspect-square flex items-center justify-center transition-transform duration-300 ease-out"
+        className="relative w-full max-w-[390px] aspect-square scale-75 sm:scale-100 flex items-center justify-center transition-transform duration-300 ease-out"
         style={{
-          transform: `perspective(800px) rotateX(${mouseOffset.y * -3}deg) rotateY(${mouseOffset.x * 3}deg) translate3d(${mouseOffset.x * 6}px, ${mouseOffset.y * 6}px, 0)`,
+          transform: canTilt
+            ? `perspective(800px) rotateX(${mouseOffset.y * -3}deg) rotateY(${mouseOffset.x * 3}deg) translate3d(${mouseOffset.x * 6}px, ${mouseOffset.y * 6}px, 0)`
+            : "none",
         }}
       >
         {/* Subtle Ambient Background Radial Glow */}
@@ -271,11 +287,21 @@ export const ProfileOrbit: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => handleScrollToSection(tech.targetSection)}
-                    onMouseEnter={() => setActiveTechId(tech.id)}
-                    onMouseLeave={() => setActiveTechId(null)}
-                    onFocus={() => {
-                      setIsHovered(true);
-                      setActiveTechId(tech.id);
+                    onMouseEnter={() => {
+                      if (canTilt) {
+                        setActiveTechId(tech.id);
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      if (canTilt) {
+                        setActiveTechId(null);
+                      }
+                    }}
+                    onFocus={(e) => {
+                      if (e.currentTarget.matches(":focus-visible")) {
+                        setIsHovered(true);
+                        setActiveTechId(tech.id);
+                      }
                     }}
                     onBlur={() => {
                       setIsHovered(false);

@@ -33,7 +33,7 @@ export const Navbar: React.FC = () => {
         animate={{ y: isHidden ? -90 : 0 }}
         transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
-          "fixed top-0 left-0 right-0 z-40 w-full transition-all duration-200 ease-out",
+          "fixed top-0 left-0 right-0 z-40 w-full transition-[background-color,border-color,box-shadow] duration-200 ease-out",
           isScrolled
             ? "bg-background/95 backdrop-blur-md border-b border-border shadow-xs"
             : "bg-background border-b border-transparent"
@@ -41,18 +41,19 @@ export const Navbar: React.FC = () => {
       >
         <Container width="wide">
           <div
-            className={cn(
-              "flex items-center justify-between transition-all duration-200 ease-out",
-              isScrolled ? "h-16" : "h-20"
-            )}
+            className="flex items-center justify-between h-16 md:h-20"
           >
             {/* Wordmark & Brand Logo */}
             <a
-              href="#"
-              className="flex items-center gap-2 text-h4 font-bold tracking-tight text-foreground group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground rounded-md p-1"
+              href="#hero"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="flex items-center gap-2 text-h4 font-bold tracking-tight text-foreground group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground rounded-md p-1 shrink-0"
             >
               <span>VR</span>
-              <NodeMark size={14} className="group-hover:scale-110 transition-transform" />
+              <NodeMark size={14} className="group-hover:scale-110 transition-transform shrink-0" />
             </a>
 
             {/* Desktop Navigation Links */}
@@ -73,13 +74,13 @@ export const Navbar: React.FC = () => {
             </nav>
 
             {/* Right Side Actions */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 shrink-0">
               <ThemeToggle />
 
               <Button
                 variant="secondary"
                 size="sm"
-                className="hidden sm:inline-flex"
+                className="hidden sm:inline-flex shrink-0"
                 onClick={() => window.open("/resume/vicky-raut-resume.pdf", "_blank")}
               >
                 Resume
@@ -91,9 +92,9 @@ export const Navbar: React.FC = () => {
                 aria-expanded={isMobileMenuOpen}
                 aria-controls="mobile-menu"
                 aria-label="Open Navigation Menu"
-                className="lg:hidden p-2 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground rounded-md cursor-pointer"
+                className="lg:hidden w-9 h-9 flex items-center justify-center shrink-0 p-0 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground rounded-md cursor-pointer border border-transparent hover:border-border transition-colors"
               >
-                <Menu className="size-6" />
+                <Menu className="size-5 shrink-0" />
               </button>
             </div>
           </div>

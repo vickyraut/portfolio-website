@@ -52,7 +52,11 @@ export const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({ entries 
             {/* Experience Card */}
             <ExperienceCard
               entry={entry}
-              onHoverChange={(hovering) => setHoveredIndex(hovering ? index : null)}
+              onHoverChange={(hovering) => {
+                if (window.matchMedia("(hover: hover)").matches) {
+                  setHoveredIndex(hovering ? index : null);
+                }
+              }}
             />
           </motion.div>
         );

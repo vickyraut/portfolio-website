@@ -12,7 +12,7 @@ export const Hero: React.FC = () => {
     <section
       id="hero"
       aria-label="Hero Section"
-      className="relative min-h-[calc(100vh-80px)] flex items-center justify-center bg-background py-12 lg:py-0 overflow-hidden"
+      className="relative min-h-[calc(100dvh-80px)] flex items-center justify-center bg-background py-12 lg:py-0 overflow-hidden"
     >
       <div className="w-full max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16">
         <motion.div

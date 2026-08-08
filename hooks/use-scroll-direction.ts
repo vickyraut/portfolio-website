@@ -8,7 +8,7 @@ export interface ScrollDirectionState {
   scrollY: number;
 }
 
-export function useScrollDirection(threshold = 10): ScrollDirectionState {
+export function useScrollDirection(threshold = 20): ScrollDirectionState {
   const [scrollDirection, setScrollDirection] = useState<"up" | "down" | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollY, setScrollY] = useState(0);

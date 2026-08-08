@@ -14,15 +14,21 @@ export interface MobileMenuProps {
 }
 
 export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
-  // Lock body scroll when mobile menu is open
+  // Lock body scroll when mobile menu is open, compensating for scrollbar width
   useEffect(() => {
     if (isOpen) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = "hidden";
+      if (scrollbarWidth > 0) {
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+      }
     } else {
       document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
     }
     return () => {
       document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
     };
   }, [isOpen]);
 
@@ -49,26 +55,30 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed inset-0 z-50 flex flex-col bg-background px-6 py-6 md:hidden overflow-y-auto"
+          className="fixed inset-0 z-50 flex flex-col bg-background px-6 py-6 lg:hidden overflow-y-auto"
         >
           {/* Header row inside overlay */}
-          <div className="flex items-center justify-between h-14 border-b border-border pb-4">
+          <div className="flex items-center justify-between h-14 border-b border-border pb-4 shrink-0">
             <a
-              href="#"
-              onClick={onClose}
-              className="flex items-center gap-2 text-h4 font-bold tracking-tight text-foreground"
+              href="#hero"
+              onClick={(e) => {
+                e.preventDefault();
+                onClose();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="flex items-center gap-2 text-h4 font-bold tracking-tight text-foreground shrink-0"
             >
               <span>VR</span>
-              <NodeMark size={14} />
+              <NodeMark size={14} className="shrink-0" />
             </a>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 shrink-0">
               <ThemeToggle />
               <button
                 onClick={onClose}
                 aria-label="Close Mobile Menu"
-                className="p-2 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground rounded-md cursor-pointer"
+                className="w-9 h-9 flex items-center justify-center shrink-0 p-0 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground rounded-md cursor-pointer border border-transparent hover:border-border transition-colors"
               >
-                <X className="size-6" />
+                <X className="size-5 shrink-0" />
               </button>
             </div>
           </div>
