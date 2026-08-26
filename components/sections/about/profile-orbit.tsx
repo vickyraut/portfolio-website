@@ -237,11 +237,11 @@ export const ProfileOrbit: React.FC = () => {
           {/* Glassmorphic Image Frame */}
           <div className="relative w-22 h-22 sm:w-26 sm:h-26 rounded-full overflow-hidden border-2 border-foreground/30 dark:border-foreground/40 shadow-xl bg-background transition-transform duration-300 group-hover:scale-105">
             <Image
-              src="/images/vicky-portrait.png"
+              src="/images/vicky-portrait-v2.png"
               alt="Vicky Raut Professional Portrait"
               fill
               sizes="(max-width: 640px) 88px, 104px"
-              className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
+              className="object-cover object-center scale-[1.18] grayscale transition-transform duration-500 group-hover:scale-[1.28]"
               priority
             />
           </div>
