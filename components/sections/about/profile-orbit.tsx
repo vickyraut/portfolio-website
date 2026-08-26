@@ -221,7 +221,7 @@ export const ProfileOrbit: React.FC = () => {
           {/* Glassmorphic Image Frame */}
           <div className="relative w-22 h-22 sm:w-26 sm:h-26 rounded-full overflow-hidden border-2 border-foreground/30 dark:border-foreground/40 shadow-xl bg-background transition-transform duration-300 group-hover:scale-105">
             <Image
-              src="/images/0ld.png"
+              src="/images/vicky-portrait.png"
               alt="Vicky Raut Professional Portrait"
               fill
               sizes="(max-width: 640px) 88px, 104px"
@@ -297,11 +297,10 @@ export const ProfileOrbit: React.FC = () => {
                       setActiveTechId(null);
                     }}
                     aria-label={`${tech.name} (${tech.category}) - Click to view section`}
-                    className={`relative group flex items-center justify-center p-2 rounded-full border backdrop-blur-md transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground ${
-                      isItemActive
-                        ? "scale-125 bg-foreground text-background border-foreground shadow-lg z-30"
-                        : "bg-background/90 dark:bg-zinc-900/90 text-foreground border-border/80 hover:border-foreground hover:bg-background shadow-xs z-10"
-                    }`}
+                    className={`relative group flex items-center justify-center p-2 rounded-full border backdrop-blur-md transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground ${isItemActive
+                      ? "scale-125 bg-foreground text-background border-foreground shadow-lg z-30"
+                      : "bg-background/90 dark:bg-zinc-900/90 text-foreground border-border/80 hover:border-foreground hover:bg-background shadow-xs z-10"
+                      }`}
                   >
                     <TechIcon id={tech.id} className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:scale-110" />
 
@@ -309,11 +308,10 @@ export const ProfileOrbit: React.FC = () => {
                     <div
                       role="tooltip"
                       id={`tooltip-${tech.id}`}
-                      className={`absolute bottom-full mb-2 left-1/2 -translate-x-1/2 whitespace-nowrap px-2.5 py-1 rounded-md bg-foreground text-background dark:bg-zinc-100 dark:text-zinc-900 text-[11px] font-medium shadow-xl pointer-events-none transition-all duration-200 ${
-                        isItemActive
-                          ? "opacity-100 translate-y-0 scale-100"
-                          : "opacity-0 translate-y-1 scale-95"
-                      }`}
+                      className={`absolute bottom-full mb-2 left-1/2 -translate-x-1/2 whitespace-nowrap px-2.5 py-1 rounded-md bg-foreground text-background dark:bg-zinc-100 dark:text-zinc-900 text-[11px] font-medium shadow-xl pointer-events-none transition-all duration-200 ${isItemActive
+                        ? "opacity-100 translate-y-0 scale-100"
+                        : "opacity-0 translate-y-1 scale-95"
+                        }`}
                     >
                       <div className="flex flex-col items-center">
                         <span className="font-semibold tracking-tight">{tech.name}</span>
