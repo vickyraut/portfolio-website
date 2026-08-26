@@ -2,51 +2,90 @@ import type { ProjectData } from "@/lib/types";
 
 export const projects: ProjectData[] = [
   {
-    slug: "agentmesh-orchestrator",
-    title: "AgentMesh Orchestrator",
+    slug: "agentic-blog-generator",
+    title: "Agentic Blog Generator",
     featured: true,
-    image: "/images/projects/agentmesh.png",
-    problem: "Multi-agent LLM workflows suffer from non-deterministic tool calling failures, unvalidated schema output, and high step latency.",
-    solution: "Designed a stateful graph-based orchestration engine featuring strict Zod/Pydantic schema verification, parallel tool execution, and automated fallback recovery.",
-    impact: "Reduced agent execution step failures by 68% and dropped average multi-tool latency from 4.2s to 1.8s.",
-    techStack: ["Python", "TypeScript", "LangChain", "FastAPI", "Pinecone", "Next.js", "Docker"],
-    githubUrl: "https://github.com/vickyraut/agentmesh-orchestrator",
-    liveUrl: "https://agentmesh.demo.com",
+    image: "/images/projects/agentic-blog.png",
+    problem:
+      "Traditional single-prompt LLM generation produces unstructured content, generic titles, and rigid language constraints — manual SEO research, drafting, and translation are slow and fragmented.",
+    solution:
+      "Designed a deterministic LangGraph state machine coordinating three specialized agents — SEO title generation, structured long-form content generation, and dynamic multi-language translation — with full LangSmith observability into each step.",
+    impact:
+      "Delivered a production-ready pipeline generating SEO-optimized, structured blogs in over 20 languages, exposed via both a FastAPI REST endpoint and a Streamlit interface.",
+    techStack: ["Python", "LangGraph", "LangChain", "Groq (Llama 3.1)", "FastAPI", "Streamlit", "Pydantic", "LangSmith"],
+    githubUrl: "https://github.com/vickyraut/Agentic-Blog-Generator",
   },
   {
-    slug: "kronosync-android",
-    title: "KronoSync Mobile",
+    slug: "multi-agent-ai-assistant",
+    title: "Multi-Agent AI Assistant",
     featured: false,
-    image: "/images/projects/kronosync.png",
-    problem: "Offline-first mobile applications frequently suffer from high battery consumption and data sync collisions under unstable network conditions.",
-    solution: "Built a native Kotlin Android application with Jetpack Compose, Room DB encrypted local storage, and intelligent WorkManager exponential backoff synchronization.",
-    impact: "Achieved 100% offline functionality, 0 data loss under network drops, and reduced background battery overhead by 35%.",
-    techStack: ["Kotlin", "Jetpack Compose", "Coroutines & Flow", "Room DB", "Hilt", "Retrofit"],
-    githubUrl: "https://github.com/vickyraut/kronosync-android",
-    liveUrl: "https://play.google.com/store/apps",
+    image: "/images/projects/multi-agent.png",
+    problem:
+      "Fragmented AI tools require switching between separate interfaces for web research, news synthesis, and reasoning tasks.",
+    solution:
+      "Built a unified Streamlit application integrating AI agents for general research, web search, and AI news summarization using LangGraph state-based workflows.",
+    impact:
+      "Unified multi-tool reasoning and search into a single high-throughput interactive dashboard.",
+    techStack: ["Python", "Streamlit", "LangGraph", "LangChain", "Tavily Search", "OpenAI API", "Gemini API", "Tool Calling"],
+    githubUrl: "https://github.com/vickyraut/Agentic-Chatbot",
+    liveUrl: "https://multiagent-chat.streamlit.app/",
   },
   {
-    slug: "semantic-rag-engine",
-    title: "SemanticRAG Pipeline",
+    slug: "real-time-criminal-activity-detection",
+    title: "Real-Time Criminal Activity Detection System",
     featured: false,
-    image: "/images/projects/semantic-rag.png",
-    problem: "Standard vector retrieval struggles with low precision on multi-turn technical documentation queries containing specialized terminology.",
-    solution: "Engineered a hybrid sparse-dense retrieval pipeline incorporating BM25 keyword matching, Cohere reranking, and Reciprocal Rank Fusion (RRF).",
-    impact: "Boosted retrieval precision P@5 from 64% to 91% across 100,000+ technical documentation chunks.",
-    techStack: ["Python", "LlamaIndex", "ChromaDB", "FastAPI", "OpenAI API", "PyTest"],
-    githubUrl: "https://github.com/vickyraut/semantic-rag-engine",
-    liveUrl: "https://rag.vickyraut.com",
+    image: "/images/projects/cctv-detection.png",
+    problem:
+      "Manual CCTV monitoring is error-prone and unable to detect fast-moving criminal incidents in real-time.",
+    solution:
+      "Developed a deep learning-based surveillance system to detect criminal activities from CCTV footage using spatio-temporal video analysis. Findings were published in a peer-reviewed research paper.",
+    impact:
+      "Delivered real-time spatio-temporal detection with automated alerts and published peer-reviewed research findings.",
+    techStack: ["Python", "YOLOv8", "TensorFlow", "OpenCV", "FastAPI", "React", "PostgreSQL"],
+    githubUrl: "https://github.com/vickyraut/Real-Time-Criminal-Activity-Detection",
+    liveUrl: "https://cctv-surveillance.vercel.app/",
   },
   {
-    slug: "edgecam-ai-android",
-    title: "EdgeCam AI Vision",
+    slug: "touristo",
+    title: "Touristo",
     featured: false,
-    image: "/images/projects/edgecam.png",
-    problem: "Cloud-dependent computer vision mobile apps suffer latency lag and raise user privacy concerns during live camera analysis.",
-    solution: "Integrated quantized TensorFlow Lite and ONNX models on-device using Android CameraX and GPU delegate acceleration.",
-    impact: "Delivered 60 FPS real-time camera object detection entirely offline with zero cloud server reliance.",
-    techStack: ["Kotlin", "TensorFlow Lite", "CameraX", "ONNX", "Android NDK", "OpenCV"],
-    githubUrl: "https://github.com/vickyraut/edgecam-ai-android",
-    liveUrl: "https://play.google.com/store/apps",
+    image: "/images/projects/touristo.png",
+    problem:
+      "Travelers struggle with disjointed apps for destination discovery, navigation, and booking.",
+    solution:
+      "Built an Android application for discovering tourist destinations, featuring user authentication, maps integration, and a booking system.",
+    impact:
+      "Streamlined destination exploration and local booking into a native, responsive mobile experience.",
+    techStack: ["Java", "XML", "Firebase", "MySQL", "MVVM", "Google Maps", "PHP", "Payment Gateway"],
+    githubUrl: "https://github.com/vickyraut/Touristo_APP",
+  },
+  {
+    slug: "ripe-papaya-detector",
+    title: "Ripe Papaya Detector",
+    featured: false,
+    image: "/images/projects/papaya-detector.png",
+    problem:
+      "Manual agricultural sorting of fruit ripeness stages is labor-intensive and subjective.",
+    solution:
+      "Trained a YOLOv8 object detection model to identify papaya ripeness stages, including dataset preparation, training/validation pipelines, and TensorFlow Lite conversion for on-device deployment.",
+    impact:
+      "Enabled lightweight on-device edge inference for real-time agricultural quality assessment.",
+    techStack: ["Python", "YOLOv8", "TensorFlow Lite", "Roboflow", "Computer Vision"],
+    githubUrl: "https://github.com/vickyraut/RippenPapayaDetector",
+  },
+  {
+    slug: "microblog",
+    title: "Microblog",
+    featured: false,
+    image: "/images/projects/microblog.png",
+    problem:
+      "Heavy blogging frameworks introduce unnecessary complexity for lightweight, fast technical publishing.",
+    solution:
+      "Built and deployed a lightweight microblogging web application using Flask, with a clean templated frontend and Docker-based deployment.",
+    impact:
+      "Achieved instant containerized deployment with minimal resource footprint.",
+    techStack: ["Python", "Flask", "Docker", "HTML/CSS"],
+    githubUrl: "https://github.com/vickyraut/Microblog-Flask",
+    liveUrl: "https://microblog-d8ord8ic.b4a.run/",
   },
 ];

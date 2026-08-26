@@ -33,6 +33,7 @@ A state-of-the-art, high-performance personal portfolio website built with Next.
 | :--- | :--- |
 | [📁 **README.md**](file:///x:/portfolio-website/README.md) | Project overview, key highlights, quick start guide, and tech stack inventory. |
 | [📁 **DESIGN.md**](file:///x:/portfolio-website/DESIGN.md) | Complete monochrome design system specification, typography scales, spatial rhythm, and component primitives. |
+| [📁 **PROJECTS.md**](file:///x:/portfolio-website/PROJECTS.md) | Project governance rules, data schema, technical writing guidelines, and tiered ordering framework. |
 | [📁 **docs/ARCHITECTURE.md**](file:///x:/portfolio-website/docs/ARCHITECTURE.md) | System architecture, component hierarchy, static rendering strategy, and customization workflow. |
 | [📁 **docs/DEPLOYMENT.md**](file:///x:/portfolio-website/docs/DEPLOYMENT.md) | Production build pipeline, Vercel setup, environment variables, and Lighthouse audit checklist. |
 
