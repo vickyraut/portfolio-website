@@ -28,7 +28,7 @@ export const About: React.FC = () => {
       {/* Two Column Layout (40% / 60% split on desktop) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         {/* Left Column: Personal Statement + Integrated Profile Orbit (40% width / 5 cols) */}
-        <Reveal variants={fadeUp} className="lg:col-span-5 flex flex-col gap-6">
+        <Reveal variants={fadeUp} className="lg:col-span-5 lg:sticky lg:top-24 lg:self-start flex flex-col gap-6">
           <h3 className="text-h3 font-semibold text-foreground tracking-tight leading-snug">
             {aboutData.statement}
           </h3>
