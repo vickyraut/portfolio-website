@@ -36,7 +36,7 @@ export const Hero: React.FC = () => {
               variants={fadeUp}
               className="text-display font-bold text-foreground tracking-tight max-w-[720px]"
             >
-              Building intelligent systems, from LLM agents to Android apps.
+              Building intelligent systems, from AI agents to Android apps.
             </motion.h1>
 
             {/* Subheading Description */}
@@ -44,7 +44,7 @@ export const Hero: React.FC = () => {
               variants={fadeUp}
               className="text-body-lg text-muted-foreground mt-6 max-w-[560px]"
             >
-              Specializing in agentic AI workflows, RAG systems, and native high-performance Android engineering.
+              I build AI-powered applications, agentic workflows, and native Android experiences.
             </motion.p>
 
             {/* Action Buttons Row */}
