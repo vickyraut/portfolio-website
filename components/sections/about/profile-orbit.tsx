@@ -184,8 +184,7 @@ export const ProfileOrbit: React.FC = () => {
   };
 
   // Concentric radii calibrated for left-column integration
-  // Ring 0: 72px, Ring 1: 122px, Ring 2: 172px (Fits within 400px container)
-  // Scaled responsively via CSS (scale-75 sm:scale-100) for narrow mobile viewports
+  // Desktop: Ring 0: 72px, Ring 1: 122px, Ring 2: 172px (Fits within 400px x 400px container)
   const ringRadii = [72, 122, 172];
 
   return (
@@ -214,21 +213,6 @@ export const ProfileOrbit: React.FC = () => {
         {/* Subtle Ambient Background Radial Glow */}
         <div className="absolute inset-0 rounded-full bg-radial from-foreground/5 via-transparent to-transparent blur-xl pointer-events-none" />
 
-        {/* Orbit Rings (Concentric circles) */}
-        {ringRadii.map((radius, idx) => (
-          <div
-            key={`ring-${idx}`}
-            className="absolute rounded-full border border-border/60 dark:border-zinc-800/80 pointer-events-none transition-colors duration-300"
-            style={{
-              width: `${radius * 2}px`,
-              height: `${radius * 2}px`,
-              boxShadow: isHovered
-                ? "0 0 15px rgba(0,0,0,0.03)"
-                : "none",
-            }}
-          />
-        ))}
-
         {/* Central Focal Point: Professional Black & White Portrait */}
         <div className="relative z-20 flex flex-col items-center justify-center group cursor-pointer">
           {/* Subtle Outer Pulsing Ring */}
@@ -237,52 +221,57 @@ export const ProfileOrbit: React.FC = () => {
           {/* Glassmorphic Image Frame */}
           <div className="relative w-22 h-22 sm:w-26 sm:h-26 rounded-full overflow-hidden border-2 border-foreground/30 dark:border-foreground/40 shadow-xl bg-background transition-transform duration-300 group-hover:scale-105">
             <Image
-              src="/images/vicky-portrait-v2.png"
+              src="/images/0ld.png"
               alt="Vicky Raut Professional Portrait"
               fill
               sizes="(max-width: 640px) 88px, 104px"
-              className="object-cover object-center scale-[1.18] grayscale transition-transform duration-500 group-hover:scale-[1.28]"
+              className="object-cover filter grayscale contrast-110 brightness-105 transition-all duration-500 group-hover:scale-110"
               priority
             />
           </div>
         </div>
 
-        {/* Orbiting Technology Nodes */}
-        {aboutData.orbitTechnologies.map((tech: OrbitTechnology) => {
-          const radius = ringRadii[tech.ringIndex] || 120;
-          const isClockwise = tech.direction === "clockwise";
-          const animName = isClockwise ? "orbit-cw" : "orbit-ccw";
-          const counterAnimName = isClockwise ? "counter-orbit-cw" : "counter-orbit-ccw";
-          const isItemActive = activeTechId === tech.id;
-
-          return (
+        {/* Orbit Rings & Nodes Layer with Continuous Always-Running Ambient Rotation */}
+        <motion.div
+          animate={shouldReduceMotion ? {} : { rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+          className="absolute inset-0 flex items-center justify-center pointer-events-none"
+        >
+          {/* Orbit Rings (Concentric circles) */}
+          {ringRadii.map((radius, idx) => (
             <div
-              key={tech.id}
-              className="absolute inset-0 flex items-center justify-center pointer-events-none"
+              key={`ring-${idx}`}
+              className="absolute rounded-full border border-border/60 dark:border-zinc-800/80 pointer-events-none transition-colors duration-300"
               style={{
-                animation: shouldReduceMotion
-                  ? "none"
-                  : `${animName} ${tech.duration}s linear infinite`,
-                animationPlayState: isHovered ? "paused" : "running",
-                transform: `rotate(${tech.initialAngle}deg)`,
+                width: `${radius * 2}px`,
+                height: `${radius * 2}px`,
+                boxShadow: isHovered
+                  ? "0 0 15px rgba(0,0,0,0.03)"
+                  : "none",
               }}
-            >
-              {/* Position node on ring radius */}
+            />
+          ))}
+
+          {/* Orbiting Technology Nodes */}
+          {aboutData.orbitTechnologies.map((tech: OrbitTechnology) => {
+            const radius = ringRadii[tech.ringIndex] || 155;
+            const isItemActive = activeTechId === tech.id;
+            const angleRad = (tech.initialAngle - 90) * (Math.PI / 180);
+            const x = Math.round(radius * Math.cos(angleRad));
+            const y = Math.round(radius * Math.sin(angleRad));
+
+            return (
               <div
+                key={tech.id}
                 className="absolute pointer-events-auto"
                 style={{
-                  transform: `translateY(-${radius}px)`,
+                  transform: `translate3d(${x}px, ${y}px, 0)`,
                 }}
               >
                 {/* Counter-rotate node to maintain upright orientation */}
-                <div
-                  style={{
-                    animation: shouldReduceMotion
-                      ? "none"
-                      : `${counterAnimName} ${tech.duration}s linear infinite`,
-                    animationPlayState: isHovered ? "paused" : "running",
-                    transform: `rotate(-${tech.initialAngle}deg)`,
-                  }}
+                <motion.div
+                  animate={shouldReduceMotion ? {} : { rotate: -360 }}
+                  transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
                 >
                   <button
                     type="button"
@@ -334,48 +323,12 @@ export const ProfileOrbit: React.FC = () => {
                       <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-foreground dark:border-t-zinc-100" />
                     </div>
                   </button>
-                </div>
+                </motion.div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </motion.div>
       </div>
-
-      {/* Global CSS Keyframes */}
-      <style jsx global>{`
-        @keyframes orbit-cw {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-        @keyframes orbit-ccw {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(-360deg);
-          }
-        }
-        @keyframes counter-orbit-cw {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(-360deg);
-          }
-        }
-        @keyframes counter-orbit-ccw {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-      `}</style>
     </motion.div>
   );
 };
