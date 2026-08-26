@@ -42,7 +42,7 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
             interactive={false}
             className="font-mono text-meta text-muted-foreground bg-background-secondary px-3 py-1 rounded-sm border-border"
           >
-            {entry.startDate} — {entry.endDate}
+            {entry.startDate} - {entry.endDate}
           </Badge>
         </div>
       </div>

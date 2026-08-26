@@ -7,9 +7,9 @@ export const projects: ProjectData[] = [
     featured: true,
     image: "/images/projects/agentic-blog.png",
     problem:
-      "Traditional single-prompt LLM generation produces unstructured content, generic titles, and rigid language constraints — manual SEO research, drafting, and translation are slow and fragmented.",
+      "Traditional single-prompt LLM generation produces unstructured content, generic titles, and rigid language constraints: manual SEO research, drafting, and translation are slow and fragmented.",
     solution:
-      "Designed a deterministic LangGraph state machine coordinating three specialized agents — SEO title generation, structured long-form content generation, and dynamic multi-language translation — with full LangSmith observability into each step.",
+      "Designed a deterministic LangGraph state machine coordinating three specialized agents (SEO title generation, structured long-form content generation, and dynamic multi-language translation) with full LangSmith observability into each step.",
     impact:
       "Delivered a production-ready pipeline generating SEO-optimized, structured blogs in over 20 languages, exposed via both a FastAPI REST endpoint and a Streamlit interface.",
     techStack: ["Python", "LangGraph", "LangChain", "Groq (Llama 3.1)", "FastAPI", "Streamlit", "Pydantic", "LangSmith"],
@@ -69,7 +69,7 @@ export const projects: ProjectData[] = [
     problem:
       "Sorting fruit ripeness manually or relying on cloud server inference introduces processing latency, network dependencies, and privacy friction.",
     solution:
-      "Built a native Android app in Kotlin that runs a self-trained YOLOv8 model on-device via TensorFlow Lite to detect papayas and predict their ripeness stage directly from the camera or gallery images — no server or internet connection required.",
+      "Built a native Android app in Kotlin that runs a self-trained YOLOv8 model on-device via TensorFlow Lite to detect papayas and predict their ripeness stage directly from the camera or gallery images: no server or internet connection required.",
     impact:
       "Enabled 100% offline, zero-latency on-device ML ripeness classification directly on Android mobile devices.",
     techStack: ["Kotlin", "XML", "TensorFlow Lite", "YOLOv8", "Android", "On-Device ML"],

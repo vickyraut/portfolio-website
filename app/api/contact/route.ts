@@ -46,7 +46,7 @@ export async function POST(req: Request) {
       return NextResponse.json({
         success: true,
         message:
-          "Thank you! Your message has been received (Demo mode — configure RESEND_API_KEY to send real emails).",
+          "Thank you! Your message has been received (Demo mode: configure RESEND_API_KEY to send real emails).",
       });
     }
 

@@ -169,8 +169,8 @@ All bio, project, experience, skill, research, and certification data is 100% de
 - **Research & Papers:** `content/research.ts`
 - **Certifications:** `content/certifications.ts`
 
-### Adding a New Homepage Section
-1. Define the content type contract in `lib/types.ts`.
-2. Populate the data entries in `content/<section-name>.ts`.
-3. Create the modular component in `components/sections/<section-name>/<section-name>.tsx` reusing `<SectionWrapper>`, `<Container>`, `<SectionHeading>`, and `<Reveal>`.
-4. Export through `components/sections/<section-name>/index.ts` and compose into `app/page.tsx`.
+### Content Formatting & Typographic Punctuation
+All textual data across `content/*.ts`, `data/*.ts`, `lib/constants.ts`, and UI components must adhere to strict typographic punctuation rules:
+- **No Em Dashes (`—`)**: Em dashes (`—`) are prohibited across all content contracts, titles, descriptions, and UI badges.
+- **Approved Punctuation**: Use standard colons (`:`), hyphens (`-`), pipe symbols (`|`), commas (`,`), or parentheses `()` for clause separation and date ranges (e.g. `2024 - 2025` or `Vicky Raut | AI Engineer & Android Developer`).
+

@@ -1,6 +1,6 @@
 # Portfolio Projects Governance & Addition Guide
 
-This document governs the specifications, data structures, editorial rules, and ordering guidelines for managing the **Projects** section of the portfolio. All future project additions—whether authored manually or via AI assistant workflows—must strictly adhere to these standards.
+This document governs the specifications, data structures, editorial rules, and ordering guidelines for managing the **Projects** section of the portfolio. All future project additions (whether authored manually or via AI assistant workflows) must strictly adhere to these standards.
 
 ---
 
@@ -37,9 +37,9 @@ export interface ProjectData {
 | `title` | `string` | Formal title of the project (e.g., `"Agentic Blog Generator"`). |
 | `featured` | `boolean` | Set to `true` for the single Featured Spotlight project, `false` for grid cards. |
 | `image` | `string` | Static asset path to the project thumbnail/mockup image (e.g., `"/images/projects/agentic-blog.png"`). |
-| `problem` | `string` | 1–2 sentence statement describing the core technical friction, challenge, or domain limitation. |
-| `solution` | `string` | 1–2 sentence explanation detailing the technical solution, architecture, or model pipeline implemented. |
-| `impact` | `string` | 1–2 sentence summary of quantifiable results, benchmarks, multi-language support, or deployment reach. |
+| `problem` | `string` | 1 to 2 sentence statement describing the core technical friction, challenge, or domain limitation. |
+| `solution` | `string` | 1 to 2 sentence explanation detailing the technical solution, architecture, or model pipeline implemented. |
+| `impact` | `string` | 1 to 2 sentence summary of quantifiable results, benchmarks, multi-language support, or deployment reach. |
 | `techStack` | `string[]` | Array of verifiable tools, languages, and frameworks used (e.g., `["Python", "LangGraph", "FastAPI"]`). |
 | `githubUrl` | `string` (optional) | Direct HTTPS link to the public GitHub repository. Omit entirely if private or unavailable. |
 | `liveUrl` | `string` (optional) | Direct HTTPS link to the active web deployment or live demo. Omit entirely if no live web demo exists. |
@@ -58,6 +58,7 @@ export interface ProjectData {
    - `COMPUTER VISION`
    - `WEB APP`
 5. **Verifiable Tech Stack Chips**: Tags must reflect tools actively used in the codebase (cross-referenced against `requirements.txt`, `package.json`, `build.gradle`, or Dockerfiles).
+6. **No Em Dashes (`—`)**: Em dashes (`—`) are prohibited across all project titles, descriptions, problem/solution statements, and UI components. Use standard colons (`:`), hyphens (`-`), pipe symbols (`|`), commas (`,`), or parentheses `()` instead.
 
 ---
 

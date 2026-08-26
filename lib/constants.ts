@@ -1,6 +1,6 @@
 export const siteMetadata = {
   name: "Vicky Raut",
-  title: "Vicky Raut — AI Engineer & Android Developer",
+  title: "Vicky Raut | AI Engineer & Android Developer",
   description: "Building intelligent systems, from LLM agents to Android apps.",
   url: "https://vickyraut.com",
 } as const;
