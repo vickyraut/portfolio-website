@@ -9,6 +9,7 @@ export interface ProjectData {
   techStack: string[]
   githubUrl?: string
   liveUrl?: string
+  category?: string
 }
 
 export interface ExperienceEntry {

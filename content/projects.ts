@@ -14,6 +14,7 @@ export const projects: ProjectData[] = [
       "Delivered a production-ready pipeline generating SEO-optimized, structured blogs in over 20 languages, exposed via both a FastAPI REST endpoint and a Streamlit interface.",
     techStack: ["Python", "LangGraph", "LangChain", "Groq (Llama 3.1)", "FastAPI", "Streamlit", "Pydantic", "LangSmith"],
     githubUrl: "https://github.com/vickyraut/Agentic-Blog-Generator",
+    liveUrl: "https://agentic-blog-gen.streamlit.app/",
   },
   {
     slug: "multi-agent-ai-assistant",
@@ -62,15 +63,16 @@ export const projects: ProjectData[] = [
   {
     slug: "ripe-papaya-detector",
     title: "Ripe Papaya Detector",
+    category: "ANDROID • ON-DEVICE AI",
     featured: false,
     image: "/images/projects/papaya-detector.png",
     problem:
-      "Manual agricultural sorting of fruit ripeness stages is labor-intensive and subjective.",
+      "Sorting fruit ripeness manually or relying on cloud server inference introduces processing latency, network dependencies, and privacy friction.",
     solution:
-      "Trained a YOLOv8 object detection model to identify papaya ripeness stages, including dataset preparation, training/validation pipelines, and TensorFlow Lite conversion for on-device deployment.",
+      "Built a native Android app in Kotlin that runs a self-trained YOLOv8 model on-device via TensorFlow Lite to detect papayas and predict their ripeness stage directly from the camera or gallery images — no server or internet connection required.",
     impact:
-      "Enabled lightweight on-device edge inference for real-time agricultural quality assessment.",
-    techStack: ["Python", "YOLOv8", "TensorFlow Lite", "Roboflow", "Computer Vision"],
+      "Enabled 100% offline, zero-latency on-device ML ripeness classification directly on Android mobile devices.",
+    techStack: ["Kotlin", "XML", "TensorFlow Lite", "YOLOv8", "Android", "On-Device ML"],
     githubUrl: "https://github.com/vickyraut/RippenPapayaDetector",
   },
   {

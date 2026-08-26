@@ -16,13 +16,14 @@ export interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project, className }) => {
   const category =
-    project.techStack.includes("Kotlin") || project.techStack.includes("Android")
+    project.category ||
+    (project.techStack.includes("Kotlin") || project.techStack.includes("Android")
       ? "Android App"
       : project.techStack.includes("LangChain") ||
         project.techStack.includes("Python") ||
         project.techStack.includes("FastAPI")
       ? "AI Project"
-      : "Featured Project";
+      : "Featured Project");
 
   return (
     <Card
