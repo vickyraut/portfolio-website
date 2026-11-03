@@ -64,6 +64,11 @@ export interface AchievementEntry {
 export interface ResearchEntry {
   title: string
   venue: string
+  journal?: string
+  volume?: string
+  issue?: string
+  publicationDate?: string
+  author?: string
   year: number
   abstract: string
   methodology: string

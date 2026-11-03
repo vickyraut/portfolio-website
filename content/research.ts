@@ -2,25 +2,23 @@ import type { ResearchEntry } from "@/lib/types";
 
 export const research: ResearchEntry[] = [
   {
-    title: "Autonomous Multi-Agent Tool Orchestration in Complex Reasoning Domains",
-    venue: "IEEE Conference on Artificial Intelligence (CAI)",
-    year: 2025,
-    abstract: "This paper presents a graph-based stateful orchestration framework for multi-agent LLM systems performing complex tool calling. By decoupling intent planning from function execution and introducing schema verification at intermediate nodes, we eliminate cyclic agent loops and invalid API payloads.",
-    methodology: "Implemented a deterministic finite state machine (FSM) over asynchronous Python event loops, evaluating tool calling against a benchmark suite of 1,500 multi-step reasoning tasks.",
-    results: "Achieved a 68% reduction in task execution step failures and a 2.3x speedup in end-to-end task completion latency compared to standard ReAct agent baselines.",
-    paperUrl: "https://arxiv.org/abs/2501.00000",
-    codeUrl: "https://github.com/vickyraut/agentmesh-orchestrator",
-    certificateUrl: "/resume/vicky-raut-resume.pdf",
-  },
-  {
-    title: "Hybrid Sparse-Dense Retrieval Fusion for Multi-Turn Technical Question Answering",
-    venue: "ACM SIGIR Workshop on Neural Information Retrieval",
-    year: 2024,
-    abstract: "Standard dense vector embeddings struggle to preserve exact keyword matching in domain-specific technical documentation. We introduce a Reciprocal Rank Fusion (RRF) algorithm combining BM25 sparse keyword indices with fine-tuned dense embeddings.",
-    methodology: "Evaluated hybrid retrieval over 100,000 dense technical document chunks, applying neural cross-encoder reranking on top-50 candidate passages before context synthesis.",
-    results: "Increased retrieval Precision@5 from 64.2% to 91.4% and Mean Reciprocal Rank (MRR) by 28.5% over pure vector search baselines.",
-    paperUrl: "https://arxiv.org/abs/2408.00000",
-    codeUrl: "https://github.com/vickyraut/semantic-rag-engine",
-    certificateUrl: "/resume/vicky-raut-resume.pdf",
+    title: "Real-Time Crime Detection System Using CCTV Surveillance",
+    venue: "International Journal of Advanced Multidisciplinary Research and Studies (IJAMRSD)",
+    journal: "International Journal of Advanced Multidisciplinary Research and Studies (IJAMRSD)",
+    volume: "Volume 5",
+    issue: "Special Issue 3",
+    publicationDate: "May 2026",
+    year: 2026,
+    author: "Vicky V. Raut",
+    abstract:
+      "Manual CCTV surveillance is labor-intensive and prone to human oversight, leading to critical delays during emergencies. This paper presents an automated deep learning framework for real-time criminal activity detection from surveillance footage. By processing continuous video streams to identify suspicious behaviors and abnormal events, the system triggers automated real-time alerts to assist security personnel.",
+    methodology:
+      "Engineered an end-to-end computer vision pipeline combining spatial feature extraction with temporal sequence analysis on CCTV streams. The framework integrates YOLOv8 for rapid object and actor detection with deep sequence modeling to evaluate temporal actions and suspicious activities in real time.",
+    results:
+      "Demonstrated accurate real-time event classification and low-latency alert generation across diverse camera angles and ambient lighting conditions, significantly improving upon traditional manual surveillance workflows.",
+    paperUrl:
+      "https://ijamrsd.com/wp-content/uploads/2026/05/JAMRSD-05-S03-2026_17.pdf",
+    codeUrl:
+      "https://github.com/vickyraut/Real-Time-Criminal-Activity-Detection",
   },
 ];

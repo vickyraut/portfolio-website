@@ -21,8 +21,8 @@ export const Research: React.FC = () => {
         <SectionHeading
           id="research-heading"
           overline="RESEARCH & PUBLICATIONS"
-          title="Peer-Reviewed Publications & Technical Papers"
-          description="Academic research focusing on multi-agent orchestration, retrieval systems, and model optimization."
+          title="Peer-Reviewed Publications"
+          description="Academic research on real-time computer vision, deep learning surveillance systems, and automated threat detection."
         />
       </Reveal>
 
